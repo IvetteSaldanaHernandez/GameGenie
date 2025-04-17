@@ -26,7 +26,7 @@ vector<Data> loadData(string &filename)
     }
     json j;
     file >> j;
-    vector<Data> data;
+    vector<Data> dataList;
     for (const auto &item : j)
     {
         Data data;
@@ -34,7 +34,7 @@ vector<Data> loadData(string &filename)
         data.platform = item["platform"].get<string>();
         data.genre = item["genre"].get<string>();
         data.rating = item["rating"].get<double>();
-        data.push_back(data);
+        dataList.push_back(data);
     }
-    return data;
+    return dataList;
 }
