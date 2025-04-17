@@ -1,4 +1,4 @@
-fetch("games.json")
+fetch("games.json") // https://www.geeksforgeeks.org/read-json-file-using-javascript/
     .then(function(response) {
         return response.json();
     })
