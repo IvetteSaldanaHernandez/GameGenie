@@ -3,13 +3,16 @@
 using namespace std;
 
 int main(){
-    string file = "backend/games.json";
+    string file = "games.json";
     vector<Data> data = loadData(file);
 
-    HashMap games(100);
+    //create HashMap
+    HashMap games(1031);
+    //insert data into map
     games.load(data);
 
     while(true){
+        //ask how to sort games
         cout << "How would you like the games sorted? (enter number 1-3)" << endl;
         cout << "1. Ratings" << endl;
         cout << "2. Genre" << endl;
@@ -37,7 +40,7 @@ int main(){
             cout << "Please enter a valid input." << endl;
             continue;
         }
-
+        //if nothing in list, say no games found (helpful for troubleshooting)
         if(mygames.empty()){
             cout << "No games found." << endl;
             continue;

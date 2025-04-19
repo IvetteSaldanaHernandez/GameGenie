@@ -18,7 +18,7 @@ class HashMap{
 private:
     int entries = 0;
     int tablesize = 0;
-    const float loadfactor = 0.75;
+    const float loadfactor = 0.5;
     struct HashValue{
         string key;
         vector<Data> value;
@@ -31,7 +31,7 @@ private:
 public:
     HashMap();
     HashMap(int size);
-    void insert(string key, Data &games);
+    void insert(string key, const Data &games);
     void load(vector<Data> &games);
     vector<Data> sortbyrating();
     vector<Data> sortbygenre(string genre);
