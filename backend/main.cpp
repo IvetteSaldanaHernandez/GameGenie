@@ -57,13 +57,13 @@ int main(){
             game["genre"] = mygames[i].genre;
             output.push_back(game);
         }
-        ofstream outFile("../hash_output.json");
+        ofstream outFile("../frontend/hash_output.json");
         outFile << output.dump(2); // pretty print!
         outFile.close();
         auto stop = high_resolution_clock::now();
         auto duration = duration_cast<microseconds>(stop - start).count();
         cout << "Time taken by sorting is " << duration << " seconds!" << endl;
-        ofstream timeFile("hash_time.txt");
+        ofstream timeFile("../frontend/hash_time.txt");
         timeFile << duration;
         timeFile.close();
         //if nothing in list, say no games found (helpful for troubleshooting)

@@ -1,0 +1,38 @@
+/* https://www.w3schools.com/css/css_website_layout.asp */
+body {
+    font-family: sans-serif;
+    margin: 2rem;
+    background: #f4f4f4;
+}
+  
+  button {
+    background: white;
+    border: 1px solid #000000;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+  button:hover {
+    background-color: #2a2a2a;
+    color: white;
+}  
+
+  .filters {
+    margin-bottom: 1rem;
+}
+  
+  #gameResults {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+  
+  .game-card {
+    background: white;
+    border: 1px solid #000000;
+    padding: 16px;
+    border-radius: 8px;
+    width: 225px;
+}
+  
