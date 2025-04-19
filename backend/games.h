@@ -37,4 +37,13 @@ public:
     vector<Data> sortbygenre(string genre);
     vector<Data> sortbyplatform(string platform);
 };
+
+// class Heap {
+// private:
+//     vector<Data> topGames;
+// public:
+//     Heap();
+//     vector<Data> topGames(); // some way to get top games
+// };
+
 #endif //GAMEGENIE_GAMES_H

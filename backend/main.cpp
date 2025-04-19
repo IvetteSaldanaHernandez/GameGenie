@@ -33,7 +33,7 @@ int main(){
         allgames = games.sortbyrating();
 
         // https://www.geeksforgeeks.org/chrono-in-c/
-        auto start = high_resolution_clock::now();
+        auto startHashMap = high_resolution_clock::now();
 
         for (int i = 0; i < allgames.size(); i++) {
             Data game = allgames[i];
@@ -49,24 +49,63 @@ int main(){
             }
         }
         sort(mygames.begin(), mygames.end(), comparerating);
-        json output; // for frontend to get time data
+        auto stopHashMap = high_resolution_clock::now();
+        auto durationHashMap = duration_cast<microseconds>(stopHashMap - startHashMap).count();
+        cout << "Time taken by sorting by Hash Map is " << durationHashMap << " seconds!" << endl;
+
+        json outputHashMap; // for frontend to get time data
         for (int i = 0; i < mygames.size(); i++) {
             json game;
             game["title"] = mygames[i].title;
             game["rating"] = mygames[i].rating;
             game["platform"] = mygames[i].platform;
             game["genre"] = mygames[i].genre;
-            output.push_back(game);
+            outputHashMap.push_back(game);
         }
-        ofstream outFile("../frontend/hash_output.json");
-        outFile << output.dump(2); // pretty print!
-        outFile.close();
-        auto stop = high_resolution_clock::now();
-        auto duration = duration_cast<microseconds>(stop - start).count();
-        cout << "Time taken by sorting is " << duration << " seconds!" << endl;
-        ofstream timeFile("../frontend/hash_time.txt");
-        timeFile << duration;
-        timeFile.close();
+        ofstream outFileHashMap("../frontend/hash_output.json");
+        outFileHashMap << outputHashMap.dump(2); // pretty print!
+        outFileHashMap.close();
+        ofstream timeFileHashMap("../frontend/hash_time.txt");
+        timeFileHashMap << durationHashMap;
+        timeFileHashMap.close();
+
+        // // heap blueprint:
+        // Heap heap;
+        // auto startHeap = high_resolution_clock::now();
+        // for (int i = 0; i < allgames.size(); i++) {
+        //     Data game = allgames[i];
+        //     bool genresame = false;
+        //     for (int j = 0; j < game.genre.size(); j++) {
+        //         if (game.genre[j] == mygenre) {
+        //             genresame = true;
+        //             break;
+        //         }
+        //     }
+        //     if (genresame && game.platform == myplatform && game.rating >= myrating) {
+        //         heap.insert(game);
+        //     }
+        // }
+        // vector<Data> topGames = heap. // some way to get top games
+        // auto stopHeap = high_resolution_clock::now();
+        // auto durationHeap = duration_cast<microseconds>(stopHeap - startHeap).count();
+        // cout << "Time taken by sorting by Hash Map is " << durationHeap << " seconds!" << endl;
+        //
+        // json outputHeap; // for frontend to get time data
+        // for (int i = 0; i < topGames.size(); i++) {
+        //     json game;
+        //     game["title"] = topGames[i].title;
+        //     game["rating"] = topGames[i].rating;
+        //     game["platform"] = topGames[i].platform;
+        //     game["genre"] = topGames[i].genre;
+        //     outputHeap.push_back(game);
+        // }
+        // ofstream outFileHeap("../frontend/heap_output.json");
+        // outFileHeap << outputHeap.dump(2); // pretty print!
+        // outFileHeap.close();
+        // ofstream timeFileHeap("../frontend/heap_time.txt");
+        // timeFileHeap << durationHashMap;
+        // timeFileHeap.close();
+
         //if nothing in list, say no games found (helpful for troubleshooting)
         if(mygames.empty()){
             cout << "No games found." << endl;
