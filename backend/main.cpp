@@ -1,6 +1,9 @@
 #include "games.h"
 #include <iostream>
 #include <chrono>
+#include <fstream>
+#include "json.hpp"
+using json = nlohmann::json;
 using namespace std;
 using namespace std::chrono;
 
@@ -45,9 +48,24 @@ int main(){
             }
         }
         sort(mygames.begin(), mygames.end(), comparerating);
+        json output; // for frontend to get time data
+        for (int i = 0; i < mygames.size(); i++) {
+            json game;
+            game["title"] = mygames[i].title;
+            game["rating"] = mygames[i].rating;
+            game["platform"] = mygames[i].platform;
+            game["genre"] = mygames[i].genre;
+            output.push_back(game);
+        }
+        ofstream outFile("../hash_output.json");
+        outFile << output.dump(2); // pretty print!
+        outFile.close();
         auto stop = high_resolution_clock::now();
         auto duration = duration_cast<microseconds>(stop - start).count();
-        cout << "Time taken by sorting is " << duration << " seconds." << endl;
+        cout << "Time taken by sorting is " << duration << " seconds!" << endl;
+        ofstream timeFile("hash_time.txt");
+        timeFile << duration;
+        timeFile.close();
         //if nothing in list, say no games found (helpful for troubleshooting)
         if(mygames.empty()){
             cout << "No games found." << endl;
