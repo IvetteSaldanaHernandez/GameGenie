@@ -17,20 +17,28 @@ vector<Data> loadData(string &filename)
         cerr << "Error opening file: " << filename << endl;
         return {};
     }
+
     json j;
     file >> j;
+
     vector<Data> dataList;
     for (const auto &item : j)
     {
-        Data data;
-        data.title = item["title"].get<string>();
-        data.platform = item["platform"].get<string>();
-        data.genre = item["genre"].get<vector<string>>();
-        data.rating = item["rating"].get<double>();
-        dataList.push_back(data);
+        if (item.contains("title") && item.contains("platform") &&
+            item.contains("genre") && item.contains("rating"))
+        {
+            Data data;
+            data.title = item["title"].get<string>();
+            data.platform = item["platform"].get<string>();
+            data.genre = item["genre"].get<vector<string>>();
+            data.rating = item["rating"].get<double>();
+            dataList.push_back(data);
+        }
     }
+
     return dataList;
 }
+
 bool comparerating(Data &x, Data &y) {
     return x.rating > y.rating;
 }

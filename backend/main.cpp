@@ -3,7 +3,7 @@
 using namespace std;
 
 int main(){
-    string file = "backend/games.json";
+    string file = "games.json";
     vector<Data> data = loadData(file);
 
     HashMap games(100);
