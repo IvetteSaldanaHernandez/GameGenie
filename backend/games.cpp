@@ -14,6 +14,7 @@ vector<Data> loadData(string &filename)
     ifstream file(filename);
     if (!file.is_open())
     {
+        //error statement
         cerr << "Error opening file: " << filename << endl;
         return {};
     }
