@@ -20,7 +20,6 @@ int main(){
         int choice;
         cin >> choice;
 
-        //take in user choice
         vector<Data> mygames;
         if(choice == 1){
             mygames = games.sortbyrating();
