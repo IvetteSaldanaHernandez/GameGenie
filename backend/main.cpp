@@ -1,6 +1,8 @@
 #include "games.h"
 #include <iostream>
+#include <chrono>
 using namespace std;
+using namespace std::chrono;
 
 int main(){
     string file = "games.json";
@@ -13,33 +15,39 @@ int main(){
 
     while(true){
         //ask how to sort games
-        cout << "How would you like the games sorted? (enter number 1-3)" << endl;
-        cout << "1. Ratings" << endl;
-        cout << "2. Genre" << endl;
-        cout << "3. Platform" << endl;
-        int choice;
-        cin >> choice;
+        cout << "Enter a genre to search for:" << endl;
+        string mygenre;
+        cin >> mygenre;
+        cout << "Enter a platform type to search for:" << endl;
+        string myplatform;
+        cin >> myplatform;
+        cout << "Enter a rating to filter by:" << endl;
+        float myrating;
+        cin >> myrating;
 
         vector<Data> mygames;
-        if(choice == 1){
-            mygames = games.sortbyrating();
+        vector<Data> allgames;
+        allgames = games.sortbyrating();
+
+        auto start = high_resolution_clock::now();
+
+        for (int i = 0; i < allgames.size(); i++) {
+            Data game = allgames[i];
+            bool genresame = false;
+            for (int j = 0; j < game.genre.size(); j++) {
+                if (game.genre[j] == mygenre) {
+                    genresame = true;
+                    break;
+                }
+            }
+            if (genresame && game.platform == myplatform && game.rating >= myrating) {
+                mygames.push_back(game);
+            }
         }
-        else if(choice == 2){
-            cout << "Enter a genre to search for:" << endl;
-            string mygenre;
-            cin >> mygenre;
-            mygames = games.sortbygenre(mygenre);
-        }
-        else if(choice == 3){
-            cout << "Enter a platform type to search for:" << endl;
-            string myplatform;
-            cin >> myplatform;
-            mygames = games.sortbyplatform(myplatform);
-        }
-        else{
-            cout << "Please enter a valid input." << endl;
-            continue;
-        }
+        sort(mygames.begin(), mygames.end(), comparerating);
+        auto stop = high_resolution_clock::now();
+        auto duration = duration_cast<microseconds>(stop - start).count();
+        cout << "Time taken by sorting is " << duration << " seconds." << endl;
         //if nothing in list, say no games found (helpful for troubleshooting)
         if(mygames.empty()){
             cout << "No games found." << endl;
