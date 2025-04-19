@@ -1,3 +1,9 @@
+# Ignore generated frontend files
+frontend/hash_output.json
+frontend/hash_time.txt
+
+.DS_Store
+
 # Logs
 logs
 *.log
