@@ -32,6 +32,7 @@ int main(){
         vector<Data> allgames;
         allgames = games.sortbyrating();
 
+        // https://www.geeksforgeeks.org/chrono-in-c/
         auto start = high_resolution_clock::now();
 
         for (int i = 0; i < allgames.size(); i++) {
