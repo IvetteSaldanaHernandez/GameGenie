@@ -34,7 +34,8 @@ You need the Live Server Extension: https://marketplace.visualstudio.com/items?i
    - Right click and choose “Open with Live Server”
    - This will open the page in your browser and show the sorted game results
 
-#### Extra
+##### Extra
 - Hash Map and Heap perform the same sorting task
 - Execution times are measured and written to text files
 - Make sure `games.json` is in the `backend/` folder so the program can read it
+- Some games in the games.json dataset appear multiple times with slightly different formats or across different platforms. This is due to inconsistencies in the source data, and as a result, you may occasionally see duplicate game titles in the results
