@@ -123,7 +123,7 @@ int main ()
         // if nothing in list, say no games found (helpful for troubleshooting)
         if (mygames.empty())
         {
-            cout << "No games found :()" << endl;
+            cout << "No games found :(" << endl;
             continue;
         }
         int displayed = 0;

@@ -22,7 +22,7 @@ vector<Data> loadData(string &filename)
     json j;
     file >> j;
     vector<Data> dataList;
-    for (const auto &item : j)
+    for (const auto &item : j["data"])
     {
         Data data;
         data.title = item["game"].get<string>();

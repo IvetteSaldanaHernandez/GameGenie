@@ -3,16 +3,21 @@
         {
             "type": "cppbuild",
             "label": "C/C++: g++.exe build active file",
-            "command": "C:\\mingw64\\bin\\g++.exe",
+            // uncomment this for Windows
+            // "command": "C:\\mingw64\\bin\\g++.exe",
+            // uncomment this for Mac
+            "command": "clang++",
             "args": [
+                "-std=c++17",
                 "-fdiagnostics-color=always",
                 "-g",
-                "${file}",
+                "main.cpp",
+                "games.cpp",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "main.out"
             ],
             "options": {
-                "cwd": "${fileDirname}"
+                "cwd": "${workspaceFolder}/backend"
             },
             "problemMatcher": [
                 "$gcc"
