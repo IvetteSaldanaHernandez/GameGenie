@@ -1,9 +1,9 @@
 # 🎮 Game Genie 
 ## COP3530 Final Project
 ### Ivette Saldana Hernandez, Emilia Delaune, Tiffany Chen
-This project filters and sorts video games using both a Hash Map and a Heap data structure 
+This project filters and sorts video games using both a Hash Map and a Heap data structure.
 
-It measures and compares the performance of each, then displays the results in a webpage
+It measures and compares the performance of each, then displays the results in a webpage.
 
 ## How to Run (in VS Code)
 You need the Live Server Extension: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
@@ -24,12 +24,12 @@ You need the Live Server Extension: https://marketplace.visualstudio.com/items?i
      - creates `main.exe`
 5. Run the program in the terminal:
    cd backend
-   ./main.out (or .\main.exe)
+      - `./main.out` (or `.\main.exe`)
    - Enter a genre, platform, and minimum rating when prompted
    - When it says "Have fun gaming!", it has created the output files:
      - `frontend/hash_output.json` and `frontend/hash_time.txt`
      - `frontend/heap_output.json` and `frontend/heap_time.txt`
-6. Open the frontend:
+7. Open the frontend:
    - Go to `frontend/webpage.html`
    - Right click and choose “Open with Live Server”
    - This will open the page in your browser and show the sorted game results
