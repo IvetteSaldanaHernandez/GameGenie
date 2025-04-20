@@ -18,12 +18,12 @@ You need the Live Server Extension: https://marketplace.visualstudio.com/items?i
 4. Build the program:
    - Mac:
      - Press Cmd + Shift + B
-     - creates `main.out`
+     - Creates `main.out`
    - Windows:
      - Ctrl + Shift + B
-     - creates `main.exe`
+     - Creates `main.exe`
 5. Run the program in the terminal:
-   cd backend
+      - cd backend
       - `./main.out` (or `.\main.exe`)
    - Enter a genre, platform, and minimum rating when prompted
    - When it says "Have fun gaming!", it has created the output files:
