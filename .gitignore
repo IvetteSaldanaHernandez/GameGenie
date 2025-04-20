@@ -2,6 +2,27 @@
 # frontend/hash_output.json
 # frontend/hash_time.txt
 
+# CMake build files
+cmake-build-debug/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+
+# CMake reply folders
+query/
+reply/
+
+# IDE stuff
+.idea/
+*.iml
+
+# Mac stuff
+.DS_Store
+
+# Executables
+*.exe
+
 .DS_Store
 
 # Logs
