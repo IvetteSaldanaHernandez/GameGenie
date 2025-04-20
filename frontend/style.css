@@ -2,37 +2,73 @@
 body {
     font-family: sans-serif;
     margin: 2rem;
-    background: #f4f4f4;
+    background: #b3b8db;
 }
   
-  button {
-    background: white;
-    border: 1px solid #000000;
-    padding: 6px 12px;
-    border-radius: 8px;
-    font-size: 14px;
+button {
+  background: #f5f3f4;
+  border: 1px solid #000000;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  margin-top: -8px;
+  font-family: "Source Code Pro", monospace;
 }
 
-  button:hover {
-    background-color: #2a2a2a;
-    color: white;
+h1 {
+  font-size: 2.5rem;
+  font-family: "Press Start 2P", system-ui;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  font-family: "Source Code Pro", monospace;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-top: -1rem;
+  font-family: "Source Code Pro", monospace;
+}
+
+button:hover {
+  background-color: #2a2a2a;
+  color: white;
+  font-family: "Source Code Pro", monospace;
 }  
 
-  .filters {
-    margin-bottom: 1rem;
+.filters {
+  margin-bottom: 1rem;
 }
   
-  #gameResults {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+#gameResults {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
 }
   
-  .game-card {
-    background: white;
-    border: 1px solid #000000;
-    padding: 16px;
-    border-radius: 8px;
-    width: 225px;
+.game-card {
+  background: #f5f3f4;
+  border: 1px solid #000000;
+  padding: 16px;
+  border-radius: 8px;
+  width: 225px;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+  gap: 15px;
+}
+
+.emoji {
+  font-size: 1em;
+  vertical-align: middle;
+  display: inline-block;
+  margin-top: -18px;
 }
   

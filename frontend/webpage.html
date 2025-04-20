@@ -6,17 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Game Genie</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Game Genie</h1>
+    <h1>Game Genie <span class="emoji">🎮</span>
+    </h1>
     <div class="filters">
-      <p><strong>Execution Time:</strong> <span id="hashTime">...</span> microseconds</p>
-      <button onclick="loadHashData()">Load Hash Map Results</button>
     </div>
   </header>
   <main>
-    <div id="gameResults"></div>
+    <section>
+      <h2>Hash Map Sorted</h2>
+      <p><strong>Sorting Time:</strong> <span id="hashTime">...</span> microseconds</p>
+      <button onclick="loadHashData()">Load Hash Map Results</button>
+      <div id="hashResults" class="results"></div>
+    </section>
+    <section>
+      <h2>Heap Sorted</h2>
+      <p><strong>Sorting Time:</strong> <span id="heapTime">...</span> microseconds</p>
+      <button onclick="loadHeapData()">Load Heap Results</button>
+      <div id="heapResults" class="results"></div>
+    </section>
   </main>
   <script src="script.js"></script>
 </body>

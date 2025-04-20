@@ -1,0 +1,3 @@
+/Users/tiffanychen/GameGenie/GameGenie/backend/cmake-build-debug/CMakeFiles/GameGenie.dir
+/Users/tiffanychen/GameGenie/GameGenie/backend/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/tiffanychen/GameGenie/GameGenie/backend/cmake-build-debug/CMakeFiles/rebuild_cache.dir

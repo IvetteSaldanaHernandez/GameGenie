@@ -7,7 +7,7 @@ using json = nlohmann::json;
 using namespace std;
 using namespace std::chrono;
 
-int main()
+int main ()
 {
     string file = "games.json";
     vector<Data> data = loadData(file);
@@ -20,14 +20,14 @@ int main()
     while (true)
     {
         // ask how to sort games
-        cout << "Enter a genre to search for:" << endl;
+        cout << "Enter a genre to search for: " << endl;
         string mygenre;
         cin >> mygenre;
-        cout << "Enter a platform type to search for:" << endl;
+        cout << "Enter a platform type to search for: " << endl;
         string myplatform;
         cin >> myplatform;
-        cout << "Enter a rating to filter by:" << endl;
-        float myrating;
+        cout << "Enter a minimum rating to filter by: " << endl;
+        double myrating;
         cin >> myrating;
 
         vector<Data> mygames;
@@ -57,7 +57,7 @@ int main()
         sort(mygames.begin(), mygames.end(), comparerating);
         auto stopHashMap = high_resolution_clock::now();
         auto durationHashMap = duration_cast<microseconds>(stopHashMap - startHashMap).count();
-        cout << "Time taken by sorting by Hash Map is " << durationHashMap << " seconds!" << endl;
+        cout << "Time taken by sorting by Hash Map is " << durationHashMap << " microseconds!" << endl;
 
         json outputHashMap; // for frontend to get time data
         for (int i = 0; i < mygames.size(); i++)
@@ -101,7 +101,7 @@ int main()
         vector<Data> topGames = heap.sortbygenre(mygenre, ascending, byRating); // some way to get top games
         auto stopHeap = high_resolution_clock::now();
         auto durationHeap = duration_cast<microseconds>(stopHeap - startHeap).count();
-        cout << "Time taken by sorting by Heap is " << durationHeap << " seconds!" << endl;
+        cout << "Time taken by sorting by Heap is " << durationHeap << " microseconds!" << endl;
 
         json outputHeap; // for frontend to get time data
         for (int i = 0; i < topGames.size(); i++)
@@ -117,13 +117,13 @@ int main()
         outFileHeap << outputHeap.dump(2); // pretty print!
         outFileHeap.close();
         ofstream timeFileHeap("../frontend/heap_time.txt");
-        timeFileHeap << durationHashMap;
+        timeFileHeap << durationHeap;
         timeFileHeap.close();
 
         // if nothing in list, say no games found (helpful for troubleshooting)
         if (mygames.empty())
         {
-            cout << "No games found." << endl;
+            cout << "No games found :()" << endl;
             continue;
         }
         int displayed = 0;
@@ -147,7 +147,7 @@ int main()
 
                 if (i >= 4)
                 {
-                    cout << "Would you like to see more? (y/n):" << endl;
+                    cout << "Would you like to see more? (y/n): " << endl;
                     string answer;
                     cin >> answer;
                     if (answer != "y")
@@ -158,7 +158,7 @@ int main()
             }
         }
 
-        cout << "Would you like to make another selection? (y/n):" << endl;
+        cout << "Would you like to make another selection? (y/n): " << endl;
         string answertwo;
         cin >> answertwo;
         if (answertwo != "y")
