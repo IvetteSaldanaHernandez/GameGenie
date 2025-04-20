@@ -101,7 +101,7 @@ int main()
         vector<Data> topGames = heap.sortbygenre(mygenre, ascending, byRating); // some way to get top games
         auto stopHeap = high_resolution_clock::now();
         auto durationHeap = duration_cast<microseconds>(stopHeap - startHeap).count();
-        cout << "Time taken by sorting by Hash Map is " << durationHeap << " seconds!" << endl;
+        cout << "Time taken by sorting by Heap is " << durationHeap << " seconds!" << endl;
 
         json outputHeap; // for frontend to get time data
         for (int i = 0; i < topGames.size(); i++)
