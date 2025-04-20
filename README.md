@@ -10,26 +10,24 @@ You need the Live Server Extension: https://marketplace.visualstudio.com/items?i
 2. Go to `.vscode/tasks.json` and:
    - Uncomment the line for your system
      - Mac:
-       "command": "clang++",
+       - "command": "clang++",
      - Windows:
-       "command": "C:\\mingw64\\bin\\g++.exe",
+       - "command": "C:\\mingw64\\bin\\g++.exe",
 3. Open `backend/main.cpp`.
 4. Build the program:
    - Mac:
-     Press Cmd + Shift + B
-     creates `main.out`
+     - Press Cmd + Shift + B
+     - creates `main.out`
    - Windows:
-     Ctrl + Shift + B
-     creates `main.exe`
+     - Ctrl + Shift + B
+     - creates `main.exe`
 5. Run the program in the terminal:
    cd backend
    ./main.out (or .\main.exe)
    - Enter a genre, platform, and minimum rating when prompted
    - When it says "Have fun gaming!", it has created the output files:
-     `frontend/hash_output.json`
-     `frontend/hash_time.txt`
-     `frontend/heap_output.json`
-     `frontend/heap_time.txt`
+     - `frontend/hash_output.json` and `frontend/hash_time.txt`
+     - `frontend/heap_output.json` and `frontend/heap_time.txt`
 6. Open the frontend:
    - Go to `frontend/webpage.html`
    - Right click and choose “Open with Live Server”
