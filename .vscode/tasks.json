@@ -14,7 +14,10 @@
                 "main.cpp",
                 "games.cpp",
                 "-o",
+                // uncomment this for Mac
                 "main.out"
+                // uncomment this for Windows
+                // "main.exe"
             ],
             "options": {
                 "cwd": "${workspaceFolder}/backend"
