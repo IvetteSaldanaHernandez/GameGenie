@@ -9,11 +9,13 @@ It measures and compares the performance of each, then displays the results in a
 You need the Live Server Extension: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 1. Open the `GameGenie` project folder in Visual Studio Code
 2. Go to `.vscode/tasks.json` and:
-   - Uncomment the line for your system
+   - Uncomment these lines for your system
      - Mac:
        - "command": "clang++",
+       - "main.out"
      - Windows:
        - "command": "C:\\mingw64\\bin\\g++.exe",
+       - "main.exe"
 3. Open `backend/main.cpp`.
 4. Build the program:
    - Mac:
